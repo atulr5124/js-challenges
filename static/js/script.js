@@ -76,6 +76,7 @@ function generateCats() {
 
  function rpsFrontEnd(humanChoice, botChoice, message) {
      var resultDiv = document.getElementById('flex-box-rps-div')
+     var playAgainButton = document.getElementById('play-again-btn')
      resultDiv.innerHTML = ""
      var humanChoiceImage = document.createElement('img')
      humanChoiceImage.src="./static/images/"+humanChoice+".png"
@@ -87,4 +88,32 @@ function generateCats() {
      resultDiv.appendChild(humanChoiceImage)
      resultDiv.appendChild(resultsDeclaration)
      resultDiv.appendChild(botChoiceImage)
+     playAgainButton.style = "display: inline"
+ }
+
+ function playRpsAgain() {
+    var playAgainButton = document.getElementById('play-again-btn')
+    playAgainButton.style = "display: none"
+    var playAreaDiv = document.getElementById('flex-box-rps-div')
+    playAreaDiv.innerHTML = ""
+    playAreaDiv.id = "flex-box-rps-div"
+    var rockElement = document.createElement("img")
+    var paperElement = document.createElement("img")
+    var scissorsElement = document.createElement("img")
+    rockElement.src = "./static/images/rock.png"
+    rockElement.id = "rock"
+    rockElement.alt = ""
+    rockElement.setAttribute("onclick","rpsGame(this)")
+    console.log(rockElement)
+    paperElement.src = "./static/images/paper.png"
+    paperElement.id = "paper"
+    paperElement.alt = ""
+    paperElement.setAttribute("onclick","rpsGame(this)")
+    scissorsElement.src = "./static/images/scissors.png"
+    scissorsElement.id = "scissors"
+    scissorsElement.alt = ""
+    scissorsElement.setAttribute("onclick","rpsGame(this)")
+    playAreaDiv.appendChild(rockElement)
+    playAreaDiv.appendChild(paperElement)
+    playAreaDiv.appendChild(scissorsElement)
  }

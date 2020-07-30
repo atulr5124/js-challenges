@@ -28,3 +28,7 @@
 .flex-box-rps img:hover {
     box-shadow: 0px 010px 50px rgba(37, 50, 233, 1);
 }
+
+#play-again-btn {
+    display: none;
+}
