@@ -44,6 +44,31 @@
             <button class="btn btn-success" id="play-again-btn" onclick="playRpsAgain()">Play Again</button>
         </div>
     </div>
+    <div class="container-4">
+        <h2 id="change-my-color">Challenge 4: Change Button Color</h2>
+        <div class="flex-box-pick-color">
+            <form action="">
+                <select name="backdrop" id="btn-background" onchange="buttonColorChange(this)">
+                    <option value="random">Random</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="reset">Reset</option>
+                </select>
+            </form>
+            <div>
+                <button class="btn btn-primary">Wee!</button>
+            </div>
+            <div>
+                <button class="btn btn-danger">Yahoo!</button>
+            </div>
+            <div>
+                <button class="btn btn-warning">Facebook!</button>
+            </div>
+            <div>
+                <button class="btn btn-success">Google!</button>
+            </div>
+        </div>
+    </div>
     <script src="./static/js/script.js"></script>
 </body>
 

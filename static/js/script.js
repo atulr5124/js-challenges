@@ -117,3 +117,52 @@ function generateCats() {
     playAreaDiv.appendChild(paperElement)
     playAreaDiv.appendChild(scissorsElement)
  }
+
+ // Challenge 4: Change button color
+ var all_buttons = document.getElementsByTagName('button')
+ var copyAllButtons = []
+ for (let i = 0; i < all_buttons.length; i++) {
+     copyAllButtons.push(all_buttons[i].classList[1])
+ }
+
+ function buttonColorChange(btnObject) {
+     if (btnObject.value === 'red') {
+         buttonsRed()
+     } else if (btnObject.value === 'green') {
+        buttonsGreen()
+     } else if (btnObject.value === 'random') {
+         buttonsRandom()
+     } else {
+         buttonsReset()
+     }
+ }
+
+ function buttonsRed() {
+     for (let i = 0; i < all_buttons.length; i++) {
+         all_buttons[i].classList.remove(all_buttons[i].classList[1])
+         all_buttons[i].classList.add('btn-danger')
+     }
+ }
+
+ function buttonsGreen() {
+    for (let i = 0; i < all_buttons.length; i++) {
+        all_buttons[i].classList.remove(all_buttons[i].classList[1])
+        all_buttons[i].classList.add('btn-success')
+    }
+}
+
+function buttonsRandom() {
+    var choices = ['btn-primary', 'btn-danger', 'btn-success', 'btn-warning']
+    randomIndex = Math.floor(Math.random() * 4)
+    for (let i = 0; i < all_buttons.length; i++) {
+        all_buttons[i].classList.remove(all_buttons[i].classList[1])
+        all_buttons[i].classList.add(choices[randomIndex])
+    }
+}
+
+function buttonsReset() {
+    for (let i = 0; i < all_buttons.length; i++) {
+        all_buttons[i].classList.remove(all_buttons[i].classList[1])
+        all_buttons[i].classList.add(copyAllButtons[i])
+    }
+}
